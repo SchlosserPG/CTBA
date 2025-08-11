@@ -1,16 +1,13 @@
 from dash import Dash, html
-import pandas as pd
+import pandas as pd  # only if you really use it
 
-# Create Dash instance
 app = Dash(__name__)
-server = app.server  # expose the Flask server for gunicorn
+server = app.server  # expose Flask server for gunicorn
 
-# Layout
 app.layout = html.Div([
     html.H1("Hello, CTBA with Gunicorn"),
     html.P("This app runs locally and in production!")
 ])
 
 if __name__ == "__main__":
-    # Local run
-    app.run_server(debug=True)
+    app.run(debug=True)
