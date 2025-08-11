@@ -292,7 +292,7 @@ Iframe)}\label{live-example-embedded-iframe}
 \end{Shaded}
 
 \begin{verbatim}
-<IPython.lib.display.IFrame at 0x1d7b6c6dac0>
+<IPython.lib.display.IFrame at 0x23928fadfd0>
 \end{verbatim}
 
 \begin{itemize}
@@ -368,14 +368,12 @@ gunicorn your\_filename:server \# production test '\,'\,'
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}\FunctionTok{bash} 
-\FunctionTok{git}\NormalTok{ init}
-\FunctionTok{git}\NormalTok{ add .}
-\FunctionTok{git}\NormalTok{ commit }\AttributeTok{{-}m} \StringTok{"Initial commit"}
-\FunctionTok{git}\NormalTok{ branch }\AttributeTok{{-}M}\NormalTok{ main}
-\FunctionTok{git}\NormalTok{ remote add origin https://github.com/USERNAME/REPO.git}
-\FunctionTok{git}\NormalTok{ push }\AttributeTok{{-}u}\NormalTok{ origin main}
-\ExtensionTok{...}
+\NormalTok{git init}
+\NormalTok{git add .}
+\NormalTok{git commit {-}m "Initial commit"}
+\NormalTok{git branch {-}M main}
+\NormalTok{git remote add origin https://github.com/USERNAME/REPO.git}
+\NormalTok{git push {-}u origin main}
 \end{Highlighting}
 \end{Shaded}
 
@@ -436,12 +434,10 @@ gunicorn your\_filename:server \# production test '\,'\,'
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}\FunctionTok{bash} 
-\ExtensionTok{quarto}\NormalTok{ render dash\_to\_render.qmd }\AttributeTok{{-}{-}to}\NormalTok{ html }\AttributeTok{{-}{-}output{-}dir}\NormalTok{ docs }
-\FunctionTok{git}\NormalTok{ add docs }
-\FunctionTok{git}\NormalTok{ commit }\AttributeTok{{-}m} \StringTok{"Publish HTML"} 
-\FunctionTok{git}\NormalTok{ push }
-\ExtensionTok{...}
+\NormalTok{quarto render dash\_to\_render.qmd {-}{-}to html {-}{-}output{-}dir docs }
+\NormalTok{git add docs }
+\NormalTok{git commit {-}m "Publish HTML" }
+\NormalTok{git push }
 \end{Highlighting}
 \end{Shaded}
 
@@ -479,9 +475,7 @@ Quarto can render a Python script (with outputs) to HTML.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}\FunctionTok{bash} 
-\ExtensionTok{quarto}\NormalTok{ render your\_script.py }\AttributeTok{{-}{-}to}\NormalTok{ html }\AttributeTok{{-}{-}output{-}dir}\NormalTok{ docs}
-\ExtensionTok{...}
+\NormalTok{quarto render your\_script.py {-}{-}to html {-}{-}output{-}dir docs}
 \end{Highlighting}
 \end{Shaded}
 

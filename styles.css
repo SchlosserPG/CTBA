@@ -1,81 +1,210 @@
+/* ===========================
+   General Document Styling
+   =========================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 12pt;
+  font-family: Lato, Arial, sans-serif;
+  background-color: white;
+  color: #3E3E3E;
+}
 
+/* ===========================
+   Headings
+   =========================== */
 h1 {
+  color: #183028;
+  background-color: ghostwhite;
+  font-variant: small-caps;
+  font-size: 120%;
+  line-height: 0.8;
+  border: 1px solid #B9975B; /* WM gold border */
+  padding: 10px;
+}
+
+h2 {
+  color: #00313C;
+  font-size: 115%;
+  line-height: 0.6;
+  border: 1px solid #B9975B;
+  padding: 10px;
+}
+
+h3 {
+  font-size: 1.1em;
+  background-color: #4C575E;
+  margin-left: 10px;
+  color: ghostwhite;
+  border: 1px solid #B9975B;
+  padding: 10px;
+}
+
+h4 {
+  font-size: 1.05em;
+  background-color: #435951;
+  color: ghostwhite;
+  margin-left: 25px;
+  border: 1px solid #B9975B;
+  padding: 5px;
+}
+
+/* ===========================
+   Lists
+   =========================== */
+ul, ol {
+  font-size: 1em;
+}
+ul li {
+  margin-left: 15px;
+}
+ul li li,
+ol li li {
+  color: #5B6770;
+  list-style-type: circle;
+}
+
+/* ===========================
+   Header Info
+   =========================== */
+#header {
+  display: block;
+  font-size: 1.2em;
+}
+.author, .date {
+  display: none;
+}
+
+/* ===========================
+   Images
+   =========================== */
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+/* ===========================
+   Content Columns
+   =========================== */
+.col-xs-12.col-sm-8.col-md-9 {
+  background-color: white;
   color: darkblue;
+  border-radius: 25px;
+  text-align: left;
+  border: 2px ridge plum;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+/* ===========================
+   Paragraphs
+   =========================== */
+p {
+  font-size: 1em;
+}
+
+/* ===========================
+   Code Blocks
+   =========================== */
+/* Default code block style (Python, etc.) */
+pre code {
+  background-color: #E8F0E6;
+  color: #115740;
+  padding: 10px;
+  border-radius: 6px;
+  border: 2px solid #B9975B; /* WM gold border */
+  display: block;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+code.bash {background-color: #E8F0E6;}
+
+/* Bash-specific code blocks (Quarto/Pandoc adds .language-bash) */
+pre code.language-bash {
+  background-color: #E8F0E6;
+  color: black;
+  border: 2px solid #B9975B; /* WM gold border */
+}
+
+/* Source code output blocks */
+.sourceCode pre {
+  font-size: 0.9em;
+  padding: 5px;
+  background-color: #E8F0E6;
+  color: #115740;
+  margin: 0;
+  word-wrap: break-word;
+  border: 2px solid #B9975B; /* WM gold border */
+}
+
+/* ===========================
+   Miscellaneous
+   =========================== */
+span {
+  margin: 0;
+  padding: 2px;
+}
+
+.cell-output.cell-output-stdout {
+  background-color: #E8F0E6;
+}
+
+h2 .header-section-number {
+  color: #00313C;
+}
+
+span.co {
+  color: red;
+  display: block;
+  word-wrap: break-word;
+  line-height: 1em;
+}
+
+.header-section-number {
+  color: ghostwhite;
+}
+
+p.caption,
+.figcaption,
+figcaption {
+  text-align: center;
+  font-size: 0.7em;
+}
+
+a {
+  color: #3E3E3E;
 }
 
 
-body{margin:0px 0px;padding:0px; font-size:12pt;
-        font-family:Lato, Arial, sans-serif;
-        background-color:white;color:#3E3E3E}
-    
-h1{color:#183028;background-color:ghostwhite; font-variant: small-caps;font-size:120%;line-height:.8; border:1px solid #B9975B;padding: 10px;}
-h2{color:#00313C;font-size:115%;line-height:.6; border:1px solid #B9975B;padding: 10px;}
-h3{font-size: 1.1em; background-color:#4C575E;margin-left:10px;color:ghostwhite; border:1px solid #B9975B; padding:10px;}
-h4{font-size: 1.05em; background-color:#435951;color:ghostwhite; margin-left:25px;border:1px solid #B9975B;padding:5px;}
-
-.sourceCode pre{font-size:.9em;
-    padding:5px; 
-    background-color:#f8f8f8;
-    color:#364741;
-    margin:0px 0px;
-    display:block;
-    word-wrap: break-word;
-        border:1px dashed #a98546;
+pre.sourceCode,
+code.sourceCode,
+div.sourceCode,
+div.sourceCode pre,
+pre > code {
+  background-color: #E8F0E6 !important;
+  color: #115740;
+  border: 2px solid #B9975B;
+  border-radius: 6px;
+  padding: 10px;
+  overflow-x: auto;
 }
 
-code span.do, code span.co, code span.st, code span.dv, code span.f1, code span.at, code span.fl {color:#364741; font-size: 11pt; 
+/* Generic pre > code fallback */
+pre code { background-color: #E8F0E6 !important; }
+
+/* Bash specifically (when Quarto adds language-bash) */
+code.language-bash,
+pre code.language-bash {
+  background-color: #E8F0E6 !important;
+  color: #000;
+  border: 2px solid #B9975B;
 }
 
-ul, ol{font-size:1.0 em;}
-ul li{margin-left:15px;}
-ul li li, ol li li {color:#5B6770;list-style-type: circle;}
+/* Quarto’s copyable code wrapper */
+.code-with-copy .sourceCode { background-color: #E8F0E6 !important; }
 
-#header{display:block; font-size:1.2em}
-.author, .date{display:none;}
-img{    display:block;
-        margin-left: auto;
-        margin-right: auto; width:60% }
-
-.col-xs-12.col-sm-8.col-md-9 {background-color:white;
-        color:darkblue;
-        display:block;
-        border-radius:25px;
-        text-align:left;
-        border:2px ridge plum;
-        margin:0px 0px;padding:10px;
-        vertical-align: middle;}
-}
-
-
-p{font-size: 1em;}
-
-.sourceCode {font-size:.95em;
-  padding:5px;word-wrap: break-word;
-    }
-
-
-
-
-code.sourceCode.r{
-    display:inline; margin:0px 0px; overflow-y: scroll; word-wrap: break-word; max-width:inherit;}
-
-span{margin:0px 0px; padding 2px;}
-
-pre code{font-size:11pt;
-  padding:5px;; 
-}
-
-.cell-output cell-output-stdout{background-color:#f8fff8;}
-
-
-h2 .header-section-number{color:#00313C;}
-
-span.co { color:red; display:block; word-wrap: break-word; line-height: 1em}
-
-.header-section-number{color:ghostwhite;}
-
-p.caption{text-align: center;font-size:.7em;}
-.figcaption{text-align: center}
-a {color:#3E3E3E;}
-
-figcaption{text-align: center}
+/* Jupyter/Quarto stdout blocks */
+.cell-output.cell-output-stdout { background-color: #E8F0E6 !important; }

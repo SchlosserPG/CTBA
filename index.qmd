@@ -75,16 +75,15 @@ pip install -r requirements.txt python your_filename.py \# dev mode gunicorn you
 
 4)  Push to GitHub
 
-``` bash
-```bash 
+```{bash}
 git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
 git remote add origin https://github.com/USERNAME/REPO.git
 git push -u origin main
-...
 ```
+
 
 5)  Deploy on Render.com
 
@@ -104,14 +103,16 @@ git push -u origin main
 
 -   Render this Quarto file to docs/ for GitHub Pages:
 
-``` bash
-```bash 
+
+
+```{bash}
 quarto render dash_to_render.qmd --to html --output-dir docs 
 git add docs 
 git commit -m "Publish HTML" 
 git push 
-...
 ```
+
+
 
 GitHub Pages setup:
 
@@ -129,8 +130,8 @@ GitHub Pages setup:
 
 Quarto can render a Python script (with outputs) to HTML.
 
-``` bash
-```bash 
+
+```{bash}
 quarto render your_script.py --to html --output-dir docs
-...
+
 ```
