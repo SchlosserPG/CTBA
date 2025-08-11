@@ -8,6 +8,7 @@ book:
   date: "8/11/2025"
   chapters:
     - index.qmd
+    - intro.qmd
 
 
 format:

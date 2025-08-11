@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Pamela Schlosser">
-<meta name="dcterms.date" content="2025-08-11">
 
-<title>CTBA</title>
+<title>2&nbsp; Electricity Prices Dashboard – CTBA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,14 +57,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -103,10 +101,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<style>html{ scroll-behavior: smooth; }</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -121,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">How to Deploy a Dash App to Render.com (and Publish HTML via docs/)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Electricity Prices Dashboard</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -148,13 +142,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">How to Deploy a Dash App to Render.com (and Publish HTML via docs/)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Electricity Prices Dashboard</span></span></a>
   </div>
 </li>
@@ -167,12 +161,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a></li>
+  <li><a href="#run-the-dash-app" id="toc-run-the-dash-app" class="nav-link" data-scroll-target="#run-the-dash-app"><span class="header-section-number">2.2</span> Run the Dash App</a></li>
+  <li><a href="#live-dash-app-embedded" id="toc-live-dash-app-embedded" class="nav-link" data-scroll-target="#live-dash-app-embedded"><span class="header-section-number">2.3</span> Live Dash App (embedded)</a>
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
-  <li><a href="#live-example-embedded-iframe" id="toc-live-example-embedded-iframe" class="nav-link" data-scroll-target="#live-example-embedded-iframe"><span class="header-section-number">2</span> Live Example (Embedded Iframe)</a></li>
-  <li><a href="#your-site-will-be-available-at" id="toc-your-site-will-be-available-at" class="nav-link" data-scroll-target="#your-site-will-be-available-at"><span class="header-section-number">3</span> Your site will be available at:</a>
-  <ul class="collapse">
-  <li><a href="#appendix-a-render-a-python-file-to-html-with-quarto" id="toc-appendix-a-render-a-python-file-to-html-with-quarto" class="nav-link" data-scroll-target="#appendix-a-render-a-python-file-to-html-with-quarto"><span class="header-section-number">3.1</span> Appendix A: Render a Python file to HTML with Quarto</a></li>
+  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link" data-scroll-target="#how-it-works"><span class="header-section-number">2.3.1</span> How it works</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -182,26 +176,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CTBA</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Electricity Prices Dashboard</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Pamela Schlosser </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 11, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -211,139 +193,297 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="overview" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Overview</h1>
-<ul>
-<li>This guide explains how to:
-<ul>
-<li>Prepare and run a Dash app locally</li>
-<li>Deploy it to Render.com using Gunicorn</li>
-<li>Fix common deployment issues</li>
-<li>Publish an HTML version of a Python file (or this guide) via GitHub Pages</li>
-<li>Use a docs/ folder to host HTML with GitHub Pages</li>
-</ul></li>
-</ul>
-</section>
-<section id="live-example-embedded-iframe" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Live Example (Embedded Iframe)</h1>
-<ul>
-<li>This shows a hosted Dash app inside the HTML output of this page.</li>
-<li>Replace the src URL with your own Render app link if different.</li>
-</ul>
-<pre class="{html}"><code>&lt;iframe src="https://ctba-oror.onrender.com/" title="Live Dash App on Render" style="width:100%;height:500px;border:2px solid #115740;border-radius:6px;"&gt;&lt;/iframe&gt;</code></pre>
-<ol type="1">
-<li>Prepare Your Dash App</li>
-</ol>
-<ul>
-<li><p>Ensure your main Python file defines: server = app.server</p></li>
-<li><p>The Gunicorn start command on Render must match your filename and server variable exactly</p></li>
-</ul>
-<div id="eef97377" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dash <span class="im">import</span> Dash, html</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> Dash(<span class="va">__name__</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>server <span class="op">=</span> app.server  <span class="co"># Required for Gunicorn in production</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>wm_green <span class="op">=</span> <span class="st">"#115740"</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>app.layout <span class="op">=</span> html.Div([</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    html.H1(<span class="st">"Hello from Dash on Render!"</span>, style<span class="op">=</span>{<span class="st">"color"</span>: wm_green, <span class="st">"textAlign"</span>: <span class="st">"center"</span>})</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>])</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    app.run(debug<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-
-        <iframe width="100%" height="650" src="http://127.0.0.1:8050/" frameborder="0" allowfullscreen=""></iframe>
-        
+<section id="introduction" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
+<p>This dashboard shows <strong>U.S. state-level electricity prices</strong> using a choropleth map.<br>
+You can interact with the year slider to see changes over time.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
-<ul>
-<li>Example mapping:
-<ul>
-<li>File: LiveDash.py –&gt; Start command: gunicorn LiveDash:server</li>
-<li>File: electricity.py –&gt; Start command: gunicorn electricity:server</li>
-</ul></li>
-</ul>
-<ol start="2" type="1">
-<li>Add Required Files</li>
-</ol>
-<ul>
-<li>Create a requirements.txt listing dependencies (add any others you import).</li>
-</ul>
-<pre class="{text}"><code>dash
-gunicorn
-plotly</code></pre>
-<ol start="3" type="1">
-<li>Run Locally</li>
-</ol>
-<ul>
-<li>Create and activate a virtual environment</li>
-<li>Install dependencies</li>
-<li>Test both dev mode and production mode</li>
-</ul>
-<pre class="{bash}"><code>python -m venv .venv 
-.venv\Scripts\activate    # Windows
-
-pip install -r requirements.txt
-python your_filename.py  # dev mode
-gunicorn your_filename:server  # production test
-</code></pre>
-<ol start="4" type="1">
-<li>Push to GitHub</li>
-</ol>
-<pre class="{bash}"><code>git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/USERNAME/REPO.git
-git push -u origin main</code></pre>
-<ol start="5" type="1">
-<li>Deploy on Render.com</li>
-</ol>
-<ul>
-<li>Create a New Web Service on Render and connect your GitHub repo</li>
-<li>In Settings, set the Build command to: pip install -r requirements.txt</li>
-<li>In Settings, set the Start command to: gunicorn your_filename:server</li>
-<li>Click Deploy and open the provided URL</li>
-</ul>
-<ol start="6" type="1">
-<li>Troubleshooting</li>
-</ol>
-<ul>
-<li>ModuleNotFoundError: Check filename and server variable (your_filename:server)</li>
-<li>Changes not showing: Clear build cache and redeploy</li>
-<li>Missing packages: Confirm all imports are in requirements.txt</li>
-<li>Port errors: Don’t hardcode PORT—Render sets it automatically</li>
-</ul>
-<ol start="7" type="1">
-<li>Publish HTML via docs/ on GitHub Pages</li>
-</ol>
-<ul>
-<li>Render this Quarto file to docs/ for GitHub Pages:</li>
-</ul>
-<pre class="{bash}"><code>quarto render dash_to_render.qmd --to html --output-dir docs 
-git add docs 
-git commit -m "Publish HTML" 
-git push </code></pre>
-<p>GitHub Pages setup:</p>
-<ul>
-<li>Settings → Pages</li>
-<li>Source: Deploy from a branch</li>
-<li>Branch: main</li>
-<li>Folder: /docs</li>
-<li>Save</li>
-</ul>
+<div class="callout-body-container callout-body">
+<p>To view the live dashboard inside Quarto, you’ll need to run this as an interactive document<br>
+(<code>quarto preview</code>) rather than a static HTML render.</p>
+</div>
+</div>
 </section>
-<section id="your-site-will-be-available-at" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Your site will be available at:</h1>
+<section id="run-the-dash-app" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="run-the-dash-app"><span class="header-section-number">2.2</span> Run the Dash App</h2>
+</section>
+<section id="live-dash-app-embedded" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="live-dash-app-embedded"><span class="header-section-number">2.3</span> Live Dash App (embedded)</h2>
+<p>This Quarto document <strong>launches the Dash server in the background</strong> when you run <code>quarto preview</code>, then embeds it below.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Run this document with:</p>
+<p>```bash quarto preview intro.qmd</p>
+</div>
+</div>
+<div id="b4ce2b74" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the app from the electricity.py file</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> runpy</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>runpy.run_path(<span class="st">"electricity.py"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>{'__name__': '&lt;run_path&gt;',
+ '__doc__': None,
+ '__package__': '',
+ '__loader__': None,
+ '__spec__': None,
+ '__file__': 'electricity.py',
+ '__cached__': None,
+ '__builtins__': {'__name__': 'builtins',
+  '__doc__': "Built-in functions, types, exceptions, and other objects.\n\nThis module provides direct access to all 'built-in'\nidentifiers of Python; for example, builtins.len is\nthe full name for the built-in function len().\n\nThis module is not normally accessed explicitly by most\napplications, but can be useful in modules that provide\nobjects with the same name as a built-in value, but in\nwhich the built-in of that name is also needed.",
+  '__package__': '',
+  '__loader__': _frozen_importlib.BuiltinImporter,
+  '__spec__': ModuleSpec(name='builtins', loader=&lt;class '_frozen_importlib.BuiltinImporter'&gt;, origin='built-in'),
+  '__build_class__': &lt;function __build_class__&gt;,
+  '__import__': &lt;function __import__(name, globals=None, locals=None, fromlist=(), level=0)&gt;,
+  'abs': &lt;function abs(x, /)&gt;,
+  'all': &lt;function all(iterable, /)&gt;,
+  'any': &lt;function any(iterable, /)&gt;,
+  'ascii': &lt;function ascii(obj, /)&gt;,
+  'bin': &lt;function bin(number, /)&gt;,
+  'breakpoint': &lt;function breakpoint&gt;,
+  'callable': &lt;function callable(obj, /)&gt;,
+  'chr': &lt;function chr(i, /)&gt;,
+  'compile': &lt;function compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1, *, _feature_version=-1)&gt;,
+  'delattr': &lt;function delattr(obj, name, /)&gt;,
+  'dir': &lt;function dir&gt;,
+  'divmod': &lt;function divmod(x, y, /)&gt;,
+  'eval': &lt;function eval(source, globals=None, locals=None, /)&gt;,
+  'exec': &lt;function exec(source, globals=None, locals=None, /, *, closure=None)&gt;,
+  'format': &lt;function format(value, format_spec='', /)&gt;,
+  'getattr': &lt;function getattr&gt;,
+  'globals': &lt;function globals()&gt;,
+  'hasattr': &lt;function hasattr(obj, name, /)&gt;,
+  'hash': &lt;function hash(obj, /)&gt;,
+  'hex': &lt;function hex(number, /)&gt;,
+  'id': &lt;function id(obj, /)&gt;,
+  'input': &lt;bound method Kernel.raw_input of &lt;ipykernel.ipkernel.IPythonKernel object at 0x000002B01CBBFCB0&gt;&gt;,
+  'isinstance': &lt;function isinstance(obj, class_or_tuple, /)&gt;,
+  'issubclass': &lt;function issubclass(cls, class_or_tuple, /)&gt;,
+  'iter': &lt;function iter&gt;,
+  'aiter': &lt;function aiter(async_iterable, /)&gt;,
+  'len': &lt;function len(obj, /)&gt;,
+  'locals': &lt;function locals()&gt;,
+  'max': &lt;function max&gt;,
+  'min': &lt;function min&gt;,
+  'next': &lt;function next&gt;,
+  'anext': &lt;function anext&gt;,
+  'oct': &lt;function oct(number, /)&gt;,
+  'ord': &lt;function ord(c, /)&gt;,
+  'pow': &lt;function pow(base, exp, mod=None)&gt;,
+  'print': &lt;function print(*args, sep=' ', end='\n', file=None, flush=False)&gt;,
+  'repr': &lt;function repr(obj, /)&gt;,
+  'round': &lt;function round(number, ndigits=None)&gt;,
+  'setattr': &lt;function setattr(obj, name, value, /)&gt;,
+  'sorted': &lt;function sorted(iterable, /, *, key=None, reverse=False)&gt;,
+  'sum': &lt;function sum(iterable, /, start=0)&gt;,
+  'vars': &lt;function vars&gt;,
+  'None': None,
+  'Ellipsis': Ellipsis,
+  'NotImplemented': NotImplemented,
+  'False': False,
+  'True': True,
+  'bool': bool,
+  'memoryview': memoryview,
+  'bytearray': bytearray,
+  'bytes': bytes,
+  'classmethod': classmethod,
+  'complex': complex,
+  'dict': dict,
+  'enumerate': enumerate,
+  'filter': filter,
+  'float': float,
+  'frozenset': frozenset,
+  'property': property,
+  'int': int,
+  'list': list,
+  'map': map,
+  'object': object,
+  'range': range,
+  'reversed': reversed,
+  'set': set,
+  'slice': slice,
+  'staticmethod': staticmethod,
+  'str': str,
+  'super': super,
+  'tuple': tuple,
+  'type': type,
+  'zip': zip,
+  '__debug__': True,
+  'BaseException': BaseException,
+  'BaseExceptionGroup': BaseExceptionGroup,
+  'Exception': Exception,
+  'GeneratorExit': GeneratorExit,
+  'KeyboardInterrupt': KeyboardInterrupt,
+  'SystemExit': SystemExit,
+  'ArithmeticError': ArithmeticError,
+  'AssertionError': AssertionError,
+  'AttributeError': AttributeError,
+  'BufferError': BufferError,
+  'EOFError': EOFError,
+  'ImportError': ImportError,
+  'LookupError': LookupError,
+  'MemoryError': MemoryError,
+  'NameError': NameError,
+  'OSError': OSError,
+  'ReferenceError': ReferenceError,
+  'RuntimeError': RuntimeError,
+  'StopAsyncIteration': StopAsyncIteration,
+  'StopIteration': StopIteration,
+  'SyntaxError': SyntaxError,
+  'SystemError': SystemError,
+  'TypeError': TypeError,
+  'ValueError': ValueError,
+  'Warning': Warning,
+  'FloatingPointError': FloatingPointError,
+  'OverflowError': OverflowError,
+  'ZeroDivisionError': ZeroDivisionError,
+  'BytesWarning': BytesWarning,
+  'DeprecationWarning': DeprecationWarning,
+  'EncodingWarning': EncodingWarning,
+  'FutureWarning': FutureWarning,
+  'ImportWarning': ImportWarning,
+  'PendingDeprecationWarning': PendingDeprecationWarning,
+  'ResourceWarning': ResourceWarning,
+  'RuntimeWarning': RuntimeWarning,
+  'SyntaxWarning': SyntaxWarning,
+  'UnicodeWarning': UnicodeWarning,
+  'UserWarning': UserWarning,
+  'BlockingIOError': BlockingIOError,
+  'ChildProcessError': ChildProcessError,
+  'ConnectionError': ConnectionError,
+  'FileExistsError': FileExistsError,
+  'FileNotFoundError': FileNotFoundError,
+  'InterruptedError': InterruptedError,
+  'IsADirectoryError': IsADirectoryError,
+  'NotADirectoryError': NotADirectoryError,
+  'PermissionError': PermissionError,
+  'ProcessLookupError': ProcessLookupError,
+  'TimeoutError': TimeoutError,
+  'IndentationError': IndentationError,
+  'IndexError': IndexError,
+  'KeyError': KeyError,
+  'ModuleNotFoundError': ModuleNotFoundError,
+  'NotImplementedError': NotImplementedError,
+  'RecursionError': RecursionError,
+  'UnboundLocalError': UnboundLocalError,
+  'UnicodeError': UnicodeError,
+  'BrokenPipeError': BrokenPipeError,
+  'ConnectionAbortedError': ConnectionAbortedError,
+  'ConnectionRefusedError': ConnectionRefusedError,
+  'ConnectionResetError': ConnectionResetError,
+  'TabError': TabError,
+  'UnicodeDecodeError': UnicodeDecodeError,
+  'UnicodeEncodeError': UnicodeEncodeError,
+  'UnicodeTranslateError': UnicodeTranslateError,
+  'ExceptionGroup': ExceptionGroup,
+  'EnvironmentError': OSError,
+  'IOError': OSError,
+  'WindowsError': OSError,
+  'open': &lt;function _io.open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)&gt;,
+  'copyright': Copyright (c) 2001-2023 Python Software Foundation.
+  All Rights Reserved.
+  
+  Copyright (c) 2000 BeOpen.com.
+  All Rights Reserved.
+  
+  Copyright (c) 1995-2001 Corporation for National Research Initiatives.
+  All Rights Reserved.
+  
+  Copyright (c) 1991-1995 Stichting Mathematisch Centrum, Amsterdam.
+  All Rights Reserved.,
+  'credits':     Thanks to CWI, CNRI, BeOpen.com, Zope Corporation and a cast of thousands
+      for supporting Python development.  See www.python.org for more information.,
+  'license': MIT License
+  
+  Copyright (c) 2025 SchlosserPG
+  
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.,
+  'help': Type help() for interactive help, or help(object) for help about object.,
+  'execfile': &lt;function _pydev_bundle._pydev_execfile.execfile(file, glob=None, loc=None)&gt;,
+  'runfile': &lt;function _pydev_bundle.pydev_umd.runfile(filename, args=None, wdir=None, namespace=None)&gt;,
+  '__IPYTHON__': True,
+  'display': &lt;function IPython.core.display_functions.display(*objs, include=None, exclude=None, metadata=None, transient=None, display_id=None, raw=False, clear=False, **kwargs)&gt;,
+  'get_ipython': &lt;bound method InteractiveShell.get_ipython of &lt;ipykernel.zmqshell.ZMQInteractiveShell object at 0x000002B01CBE9FD0&gt;&gt;},
+ 'dash': &lt;module 'dash' from 'C:\\Users\\pamel\\Documents\\BUAD-CTBA\\Code\\.venv\\Lib\\site-packages\\dash\\__init__.py'&gt;,
+ 'dcc': &lt;module 'dash.dcc' from 'C:\\Users\\pamel\\Documents\\BUAD-CTBA\\Code\\.venv\\Lib\\site-packages\\dash\\dcc\\__init__.py'&gt;,
+ 'html': &lt;module 'dash.html' from 'C:\\Users\\pamel\\Documents\\BUAD-CTBA\\Code\\.venv\\Lib\\site-packages\\dash\\html\\__init__.py'&gt;,
+ 'Input': dash.dependencies.Input,
+ 'Output': dash.dependencies.Output,
+ 'pd': &lt;module 'pandas' from 'C:\\Users\\pamel\\Documents\\BUAD-CTBA\\Code\\.venv\\Lib\\site-packages\\pandas\\__init__.py'&gt;,
+ 'px': &lt;module 'plotly.express' from 'C:\\Users\\pamel\\Documents\\BUAD-CTBA\\Code\\.venv\\Lib\\site-packages\\plotly\\express\\__init__.py'&gt;,
+ 'df':        year  month state      sectorName  customers  price    revenue  \
+ 0      2001      1    WY     all sectors        NaN   4.31   48.12840   
+ 1      2001      1    WY      commercial        NaN   5.13   12.67978   
+ 2      2001      1    WY      industrial        NaN   3.26   19.60858   
+ 3      2001      1    WY           other        NaN   4.75    0.76868   
+ 4      2001      1    WY     residential        NaN   6.01   15.07136   
+ ...     ...    ...   ...             ...        ...    ...        ...   
+ 81710  2024      1    AR     all sectors  1717720.0   9.63  442.98773   
+ 81711  2024      1    AR      commercial   208669.0  10.26   97.79467   
+ 81712  2024      1    AR      industrial    34951.0   7.08  109.92656   
+ 81713  2024      1    AR     residential  1474098.0  11.24  235.26399   
+ 81714  2024      1    AR  transportation        2.0  12.70    0.00252   
+ 
+             sales  
+ 0      1116.17208  
+ 1       247.08691  
+ 2       602.30484  
+ 3        16.17442  
+ 4       250.60591  
+ ...           ...  
+ 81710  4598.63147  
+ 81711   953.02154  
+ 81712  1553.02838  
+ 81713  2092.56172  
+ 81714     0.01984  
+ 
+ [81715 rows x 8 columns],
+ 'app': &lt;dash.dash.Dash at 0x2b042a8db80&gt;,
+ 'update_map': &lt;function &lt;run_path&gt;.update_map(selected_year)&gt;}</code></pre>
+</div>
+</div>
+<section id="how-it-works" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="how-it-works"><span class="header-section-number">2.3.1</span> How it works</h3>
 <ul>
-<li>https://YOUR-USERNAME.github.io/YOUR-REPO/</li>
+<li>The <code>runpy.run_path("electricity.py")</code> call will execute the file directly in the Quarto execution environment.</li>
+<li>If you want to <strong>serve the app locally</strong> and not block the document rendering, you could instead run the script in the terminal:</li>
 </ul>
-<section id="appendix-a-render-a-python-file-to-html-with-quarto" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="appendix-a-render-a-python-file-to-html-with-quarto"><span class="header-section-number">3.1</span> Appendix A: Render a Python file to HTML with Quarto</h2>
-<p>Quarto can render a Python script (with outputs) to HTML.</p>
-<pre class="{bash}"><code>quarto render your_script.py --to html --output-dir docs</code></pre>
+<div id="ff8bfb3b" class="cell" data-message="false" data-execution_count="2">
+<iframe src="http://127.0.0.1:8050" width="100%" height="800" style="border:2px solid #B9975B; border-radius:8px; background-color:#E8F0E6;">
+</iframe>
+</div>
 
 
 </section>
@@ -772,11 +912,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="How to Deploy a Dash App to Render.com (and Publish HTML via docs/)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">How to Deploy a Dash App to Render.com (and Publish HTML via docs/)</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Electricity Prices Dashboard">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Electricity Prices Dashboard</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -784,5 +924,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
