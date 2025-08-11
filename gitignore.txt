@@ -1,0 +1,51 @@
+# -----------------------------
+# OS-specific files
+# -----------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS (in case someone collaborates from Mac)
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# -----------------------------
+# VS Code
+# -----------------------------
+.vscode/
+*.code-workspace
+
+# -----------------------------
+# Logs and temp files
+# -----------------------------
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+
+# -----------------------------
+# Build / Output
+# -----------------------------
+dist/
+build/
+out/
+
+# -----------------------------
+# Git
+# -----------------------------
+*.orig
+*.rej
+
+# -----------------------------
+# Data (if scripts generate it)
+# -----------------------------
+*.csv
+*.tsv
+*.json
+*.sqlite
+data/
+
