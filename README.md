@@ -1,4 +1,4 @@
-# CTBA Project Template – William & Mary
+# CTBA Project
 
 This repository is a **starting point** for students in the *Competing Through Business Analytics (CTBA)* course.  
 Use it as a guide for setting up and sharing your **Dash projects**, **Bash scripts**, and any other code you think will be helpful to your classmates.
