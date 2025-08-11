@@ -1,0 +1,116 @@
+---
+title: "How to Deploy a Dash App to Render.com (and Publish HTML via docs/)"
+format:
+  html:
+    theme: default
+    toc: true
+    toc-depth: 2
+    smooth-scroll: true
+page-layout: article
+---
+
+# Overview
+
+-   This guide explains how to:
+    -   Prepare and run a Dash app locally
+    -   Deploy it to Render.com using Gunicorn
+    -   Fix common deployment issues
+    -   Publish an HTML version of a Python file (or this guide) via GitHub Pages
+    -   Use a docs/ folder to host HTML with GitHub Pages
+
+# Live Example (Embedded Iframe)
+
+-   This shows a hosted Dash app inside the HTML output of this page.
+-   Replace the src URL with your own Render app link if different.
+
+```{html}
+<iframe src="https://ctba-oror.onrender.com/" title="Live Dash App on Render" style="width:100%;height:500px;border:2px solid #115740;border-radius:6px;"></iframe>
+```
+
+1)  Prepare Your Dash App
+
+-   Ensure your main Python file defines: server = app.server
+
+-   The Gunicorn start command on Render must match your filename and server variable exactly
+
+```{python}
+from dash import Dash, html
+
+app = Dash(__name__)
+server = app.server  # Required for Gunicorn in production
+
+wm_green = "#115740"
+
+app.layout = html.Div([
+    html.H1("Hello from Dash on Render!", style={"color": wm_green, "textAlign": "center"})
+])
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+-   Example mapping:
+    -   File: LiveDash.py --\> Start command: gunicorn LiveDash:server
+    -   File: electricity.py --\> Start command: gunicorn electricity:server
+
+2)  Add Required Files
+
+-   Create a requirements.txt listing dependencies (add any others you import).
+
+```{text}
+dash
+gunicorn
+plotly
+```
+
+3)  Run Locally
+
+-   Create and activate a virtual environment
+-   Install dependencies
+-   Test both dev mode and production mode
+
+'''bash python -m venv .venv \# Windows PowerShell: .venv\Scripts\Activate.ps1 \# macOS/Linux: source .venv/bin/activate
+
+pip install -r requirements.txt python your_filename.py \# dev mode gunicorn your_filename:server \# production test '''
+
+4)  Push to GitHub
+
+'''bash git init git add . git commit -m "Initial commit" git branch -M main git remote add origin https://github.com/USERNAME/REPO.git git push -u origin main '''
+
+5)  Deploy on Render.com
+
+-   Create a New Web Service on Render and connect your GitHub repo
+-   Build Command: pip install -r requirements.txt
+-   Start Command: gunicorn your_filename:server
+-   Click Deploy and open the provided URL
+
+6)  Troubleshooting
+
+-   ModuleNotFoundError: Check filename and server variable (your_filename:server)
+-   Changes not showing: Clear build cache and redeploy
+-   Missing packages: Confirm all imports are in requirements.txt
+-   Port errors: Don’t hardcode PORT—Render sets it automatically
+
+7)  Publish HTML via docs/ on GitHub Pages
+
+-   Render this Quarto file to docs/ for GitHub Pages:
+
+'''bash quarto render dash_to_render.qmd --to html --output-dir docs git add docs git commit -m "Publish HTML" git push '''
+
+# GitHub Pages setup:
+
+-   Settings → Pages
+-   Source: Deploy from a branch
+-   Branch: main
+-   Folder: /docs
+-   Save
+
+# Your site will be available at:
+
+-   https://YOUR-USERNAME.github.io/YOUR-REPO/
+
+# Appendix A: Render a Python file to HTML with Quarto
+
+# Quarto can render a Python script (with outputs) to HTML.
+
+'''bash quarto render your_script.py --to html --output-dir docs '''

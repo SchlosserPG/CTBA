@@ -1,0 +1,26 @@
+project:
+  type: book
+  output-dir: docs
+include-in-header: custom-head.html
+
+book:
+  title: "CTBA"
+  author: "Pamela Schlosser"
+  date: "8/11/2025"
+  chapters:
+    - index.qmd
+
+
+
+bibliography: references.bib
+
+format:
+  html:
+    css: styles.css
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
+
+
