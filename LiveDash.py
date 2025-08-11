@@ -41,7 +41,7 @@ git push -u origin main""", style={"backgroundColor": wm_gold, "padding": "10px"
         html.Li("Connect your GitHub repo."),
         html.Li("In Settings, set the Build command to: pip install -r requirements.txt"),
         html.Li("In Settings, set the Start command to: gunicorn your_filename:server"),
-        html.Li("Deploy and open the provided URL."),
+        html.Li(html.Span(["Deploy and open the provided URL, e.g. ", html.A("Example App", href="https://ctba-oror.onrender.com/", target="_blank", style={"color": wm_green, "textDecoration": "underline"})])),
     ], style={"marginBottom": "20px"}),
 
     html.H2("6. Troubleshooting", style={"color": wm_green}),
@@ -49,6 +49,7 @@ git push -u origin main""", style={"backgroundColor": wm_gold, "padding": "10px"
         html.Li("ModuleNotFoundError: Ensure start command matches your filename exactly."),
         html.Li("Clear build cache and redeploy if changes don't take effect."),
         html.Li("Confirm all dependencies are listed in requirements.txt."),
+        html.Li(html.Span(["For Render docs, visit ", html.A("Render Help Center", href="https://render.com/docs", target="_blank", style={"color": wm_green, "textDecoration": "underline"})])),
     ], style={"marginBottom": "20px"})
 ], style={"maxWidth": "800px", "margin": "auto", "fontFamily": "Arial, sans-serif"})
 
