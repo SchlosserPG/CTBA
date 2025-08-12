@@ -17,7 +17,7 @@ layout = html.Div(
     style={"backgroundColor": "#0c2d3e", "padding": "20px", "minHeight": "100vh"},
     children=[
         html.H1("Electricity Prices by US State",
-                style={"color": "white", "textAlign": "center"}),
+                style={"color": "#183028", "textAlign": "center"}),
 
         dcc.Slider(
             id="year-slider",
