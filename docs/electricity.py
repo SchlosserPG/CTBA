@@ -10,9 +10,10 @@ server = app.server
 
 dash.register_page(__name__, path="/electricity", name="Electricity", order=2)
 
-# Robust path: project_root/data/electricity_prices.csv
 DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "electricity_prices.csv"
+
 df = pd.read_csv(DATA_PATH)
+
 df.columns = [c.strip() for c in df.columns]
 df["year"] = pd.to_numeric(df["year"], errors="coerce").astype(int)
 
