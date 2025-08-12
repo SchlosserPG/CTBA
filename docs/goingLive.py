@@ -1,7 +1,7 @@
 from dash import Dash, html, register_page
 
 app = Dash(__name__)
-server = app.server  # Required for Gunicorn in production
+server = app.server  
 
 # William & Mary green palette
 wm_green = "#115740"
@@ -10,7 +10,7 @@ wm_gold = "#B9975B"
 register_page(
     __name__,
     path="/index",
-    name="Home",
+    name="Deployment Guide",
     order=0
 )
 
@@ -63,6 +63,3 @@ git push -u origin main""", style={"backgroundColor": wm_gold, "padding": "10px"
 # App layout
 app.layout = layout 
 
-
-if __name__ == "__main__":
-    app.run(debug=True)

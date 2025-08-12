@@ -130,15 +130,16 @@ pre code.language-bash {
 }
 
 /* Source code output blocks */
-.sourceCode pre {
+.sourceCode pre, pre.code {
   font-size: 0.9em;
-  padding: 5px;
-  background-color: #E8F0E6;
-  color: #115740;
+  padding: 10px;
+  background-color: #B9975B;
+  color: white;
   margin: 0;
   word-wrap: break-word;
-  border: 2px solid #B9975B; /* WM gold border */
+  border-radius: 5px; 
 }
+
 
 /* ===========================
    Miscellaneous
