@@ -1,4 +1,4 @@
-from dash import Dash, html
+from dash import Dash, html, register_page
 
 app = Dash(__name__)
 server = app.server  # Required for Gunicorn in production
@@ -7,7 +7,14 @@ server = app.server  # Required for Gunicorn in production
 wm_green = "#115740"
 wm_gold = "#B9975B"
 
-app.layout = html.Div([
+register_page(
+    __name__,
+    path="/index",
+    name="Home",
+    order=0
+)
+
+layout = html.Div([
     html.H1("How to Deploy a Dash App to Render.com", style={"color": wm_green, "textAlign": "center"}),
     html.H2("1. Prepare your Dash app", style={"color": wm_green}),
     html.Ul([
@@ -52,6 +59,10 @@ git push -u origin main""", style={"backgroundColor": wm_gold, "padding": "10px"
         html.Li(html.Span(["For Render docs, visit ", html.A("Render Help Center", href="https://render.com/docs", target="_blank", style={"color": wm_green, "textDecoration": "underline"})])),
     ], style={"marginBottom": "20px"})
 ], style={"maxWidth": "800px", "margin": "auto", "fontFamily": "Arial, sans-serif"})
+
+# App layout
+app.layout = layout 
+
 
 if __name__ == "__main__":
     app.run(debug=True)
