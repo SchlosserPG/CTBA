@@ -115,6 +115,7 @@ layout = html.Div(
     style={"padding": "20px", "maxWidth": "1100px", "margin": "0 auto"},
     children=[
         html.H1("Job Changes Dashboard", style={"textAlign": "center"}),
+
         html.Div(
             [
                 html.Div(
@@ -142,12 +143,31 @@ layout = html.Div(
                 "marginBottom": "16px",
             },
         ),
+
+        html.P(
+            "This chart shows the top companies with the highest number of departures "
+            "based on the selected time frame. It allows you to identify which organizations "
+            "are experiencing the most employee exits."
+        ),
         dcc.Graph(id="companies-bar"),
+
+        html.P(
+            "This chart shows the top job functions with the highest number of departures. "
+            "It helps highlight which roles or departments are most affected by employee turnover."
+        ),
         dcc.Graph(id="functions-bar"),
+
+        html.P(
+            "This static chart compares weekly job arrivals and departures for the year 2025. "
+            "It provides a time-series view of workforce movement, helping to spot trends, "
+            "spikes, or declines in hiring and attrition."
+        ),
         dcc.Graph(id="weekly-line"),
+
         html.Div(id="data-warning", style={"marginTop": "8px", "color": "#8a6d3b"}),
     ],
 )
+
 
 @dash.callback(
     Output("companies-bar", "figure"),
