@@ -17,7 +17,8 @@ CITY_COORDS = {
     "Charlottesville": (38.0293, -78.4767),
 }
 
-dash.register_page(__name__, path="/weather", name="Open-Meteo Dashboard", order=6)
+dash.register_page(__name__, path="/weather", name="Open-Meteo Dashboard", order=6, external_stylesheets=[dbc.themes.BOOTSTRAP])
+
 
 def fetch_hourly_temp(lat: float, lon: float) -> pd.DataFrame:
     url = (
@@ -74,19 +75,22 @@ def kpi_card(title, id_):
 
 kpi_row = dbc.Row(
     [
-        dbc.Col(kpi_card("Current Temp (°C)", "kpi-now"), md=4),
-        dbc.Col(kpi_card("Min (°C/48h)", "kpi-min"), md=4),
-        dbc.Col(kpi_card("Max (°C/48h)", "kpi-max"), md=4),
+        dbc.Col(kpi_card("Current Temp (°C)", "kpi-now"), width=4, class_name="buttonsmb-4"),
+        dbc.Col(kpi_card("Min (°C/48h)", "kpi-min"), width=4, class_name="buttonsmb-4"),
+        dbc.Col(kpi_card("Max (°C/48h)", "kpi-max"), width=4, class_name="buttonsmb-4"),
     ],
-    className="g-3 mb-3",
+    className="mb-5",
 )
 
 chart_card = dbc.Card(
-    [dbc.CardHeader("Hourly Temperature (next 48h)"),
-     dbc.CardBody(dcc.Graph(id="temp-chart", config={"displayModeBar": False}))],
+    [
+        dbc.CardHeader("Hourly Temperature (next 48h)"),
+        dbc.CardBody(dcc.Graph(id="temp-chart", config={"displayModeBar": False}))
+    ],
+    className="mb-6"
 )
 
-table_card = dbc.Card([dbc.CardHeader("Summary Stats"), dbc.CardBody(html.Div(id="stats-table"))])
+table_card = dbc.Card([dbc.CardHeader("Summary Stats"), dbc.CardBody(html.Div(id="stats-table"))], className="g-3")
 
 layout = dbc.Container(
     [
