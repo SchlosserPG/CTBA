@@ -1,6 +1,8 @@
 import dash
 
 from dash import Dash, html, page_container, page_registry
+import dash_bootstrap_components as dbc
+
 
 app = Dash(
     __name__,
@@ -31,6 +33,7 @@ app.layout = html.Div(
     ],
     className="shell"
 )
+
 
 if __name__ == "__main__":
     app.run(debug=True)

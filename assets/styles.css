@@ -285,4 +285,11 @@ pre code.language-bash {
 }
 
 
-
+/* Restore grid basics in case custom CSS overrode them */
+.row { display: flex; flex-wrap: wrap; margin-right: -.75rem; margin-left: -.75rem; }
+[class*="col-"] { position: relative; width: 100%; padding-right: .75rem; padding-left: .75rem; }
+@media (min-width: 768px) {
+  .col-md-3 { flex: 0 0 auto; width: 20%; }
+  .col-md-6 { flex: 0 0 auto; width: 40%; }
+}
+h3#kpi-max, h3#kpi-min, h3#kpi-now { font-size: 1.1rem; color:#000; background-color: #f8fafc;margin:0px}
